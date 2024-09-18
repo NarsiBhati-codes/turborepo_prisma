@@ -1,6 +1,7 @@
 Here's a new `README.md` for your Turborepo setup, tailored to include the specific details of your configuration and how to manage migrations:
 
-````markdown
+<!-- ````markdown -->
+
 # Turborepo Starter
 
 Welcome to the Turborepo starter project!
@@ -32,11 +33,13 @@ This Turborepo comes with several tools pre-configured:
 To set up the project, follow these steps:
 
 1. Clone the repository:
+
    ```sh
    git clone <repository-url>
    cd <repository-name>
    ```
-````
+
+   <!-- ```` -->
 
 2. Install dependencies:
    ```sh
