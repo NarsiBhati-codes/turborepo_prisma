@@ -1,77 +1,95 @@
-# Turborepo starter
+Here's a new `README.md` for your Turborepo setup, tailored to include the specific details of your configuration and how to manage migrations:
 
-This is an official starter Turborepo.
+````markdown
+# Turborepo Starter
 
-## Using this example
+Welcome to the Turborepo starter project!
 
-Run the following command:
+This repository includes a Turborepo setup with various applications and packages, designed to manage a monorepo efficiently.
 
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
+## Contents
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- `docs`: A [Next.js](https://nextjs.org/) application for documentation.
+- `web`: Another [Next.js](https://nextjs.org/) application for your main site.
+- `@repo/ui`: A shared React component library used by both `web` and `docs` applications.
+- `@repo/eslint-config`: ESLint configurations, including `eslint-config-next` and `eslint-config-prettier`.
+- `@repo/typescript-config`: TypeScript configurations (`tsconfig.json`) used across the monorepo.
 
 ### Utilities
 
-This Turborepo has some additional tools already setup for you:
+This Turborepo comes with several tools pre-configured:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [TypeScript](https://www.typescriptlang.org/) for static type checking.
+- [ESLint](https://eslint.org/) for code linting.
+- [Prettier](https://prettier.io) for code formatting.
+
+## Getting Started
+
+### Installation
+
+To set up the project, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+````
+
+2. Install dependencies:
+   ```sh
+   bun install
+   ```
+
+### Development
+
+To develop all apps and packages, run:
+
+```sh
+bun run dev
+```
+
+This command will start all applications and monitor changes.
 
 ### Build
 
-To build all apps and packages, run the following command:
+To build all apps and packages, run:
 
-```
-cd my-turborepo
-pnpm build
+```sh
+bun run build
 ```
 
-### Develop
+### Database Migrations
 
-To develop all apps and packages, run the following command:
+To handle database migrations, you can use the following scripts:
 
-```
-cd my-turborepo
-pnpm dev
-```
+- **Generate Prisma Client:** `bun run db:generate`
+- **Push Prisma Schema to Database:** `bun run db:push`
+- **Run Migrations in Development:** `bun run db:migrate:dev`
+- **Deploy Migrations:** `bun run db:migrate`
+
+You can use these commands to manage your database schema and migrations across the monorepo.
 
 ### Remote Caching
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+To enable remote caching with Turborepo, you'll need a Vercel account. Follow these steps:
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+1. Authenticate with Vercel:
 
-```
-cd my-turborepo
-npx turbo login
-```
+   ```sh
+   npx turbo login
+   ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+2. Link your Turborepo to the remote cache:
+   ```sh
+   npx turbo link
+   ```
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### Useful Links
 
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
+Learn more about Turborepo:
 
 - [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
 - [Caching](https://turbo.build/repo/docs/core-concepts/caching)
@@ -79,3 +97,15 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+```sh
+### Explanation
+
+- Installation: Details the steps for setting up the project.
+- Development and Build: Commands to start development and build the project.
+- Database Migrations: Specific commands for managing Prisma migrations.
+- Remote Caching: Instructions for enabling remote caching with Vercel.
+- Useful Links:Provides resources for learning more about Turborepo.
+
+You can adjust or expand upon this `README.md` based on additional details or specific configurations of your project.
+```
